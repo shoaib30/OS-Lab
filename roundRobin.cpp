@@ -20,7 +20,6 @@ int main()  {
         cout<<"\nBurst Time:";
         cin>>p[i].burst;
         p[i].sTime=p[i].burst;
-
     }
     cout<<"\n Enter the time quantum : ";
     cin>>timeQ;
