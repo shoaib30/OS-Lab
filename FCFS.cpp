@@ -48,7 +48,7 @@ int main()
     for(i=1;i<n;i++)
     {
         p[i].execution=p[i].burst+p[i-1].execution;
-        p[i].wait=p[i-1].execution;
+        p[i].wait=p[i-1].execution - p[i].arrival;
         p[i].time=p[i].wait+p[i].burst;
     }
     float avgtime=0.0,avgwait=0.0;
