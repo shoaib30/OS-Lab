@@ -47,9 +47,9 @@ int main()
     p[0].time=p[0].wait+p[0].burst;
     for(i=1;i<n;i++)
     {
-        p[i].execution=p[i].burst+p[i-1].execution;
-        p[i].wait=p[i-1].execution - p[i].arrival;
-        p[i].time=p[i].wait+p[i].burst;
+        p[i].execution = p[i].burst+p[i-1].execution;
+        p[i].wait = p[i-1].execution - p[i].arrival;
+        p[i].time = p[i].wait+p[i].burst;
     }
     float avgtime=0.0,avgwait=0.0;
     for(i=0;i<n;i++)
@@ -57,8 +57,8 @@ int main()
         avgtime+=p[i].time;
         avgwait+=p[i].wait;
     }
-    avgtime/=n;
-    avgwait/=n;
+    avgtime /= n;
+    avgwait /= n;
 
     cout<<"\n\nProc\t|Arr\t|Burst\t|Wait\t|Exec\t|Time\n";
     for(i=0;i<n;i++)
