@@ -12,7 +12,7 @@ int main()
 	cin>>n;
 	cout<<"Enter the cylinder number to access \n";
 	for(i=0; i<n; i++)
-  {	
+    {
     cout<<i+1<<":";
 		cin>>queues[i];
 	}
