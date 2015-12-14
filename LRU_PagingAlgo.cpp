@@ -9,7 +9,7 @@ class frame
     public:
         frame()
         {
-            page = 0;
+            page = -1;
             age = 999;
             status = false;
         }
