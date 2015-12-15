@@ -13,7 +13,7 @@ int main()
 	cout<<"Enter the cylinder number to access \n";
 	for(i=0; i<n; i++)
     {
-    cout<<i+1<<":";
+        cout<<i+1<<":";
 		cin>>queues[i];
 	}
 	total=abs(initial-queues[0]);
