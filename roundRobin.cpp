@@ -54,7 +54,6 @@ int main()  {
     }
     avgtime/=n;
     avgwait/=n;
-
     cout<<"\n\nProc\t|Burst\t|Wait\t|tTime\t|sTime\n";
     for(i=0;i<n;i++)
     {

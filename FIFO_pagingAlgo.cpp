@@ -22,6 +22,7 @@ class memory
             for(int i = 0; i < numberOfFrames; i++)
                 if(frames[i] == x)
                     return true;
+            return false;
         }
         void dispMemory()
         {

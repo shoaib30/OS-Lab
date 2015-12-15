@@ -14,7 +14,7 @@ int main()
     pid_t childPid;
     printf("Parent greeting\n");
     childPid = fork();
-    if (childPid  >= 0)
+    if(childPid  >= 0)
     {
         if(childPid == 0)
         {
@@ -23,7 +23,9 @@ int main()
             printf("Child exiting\n");
         }
         else
+        {
             waitpid(-1,NULL,0);
+        }
     }
     else
         err_sys("fork error\n");
