@@ -87,9 +87,9 @@ class memory
             {
                 head = findLeastRecentlyUsed();
                 frames[head].setFrame(x);
-                oneCycle();
                 pageFaults++;
             }
+            oneCycle();
             dispMemory();
         }
         int getPageFaults()
