@@ -38,13 +38,16 @@ int main()
                 highestPriorityProcess = i;
             }
         }
-        p[highestPriorityProcess].remaining -= 1;
-        if(p[highestPriorityProcess].remaining == 0)
+        if(highestPriorityProcess != numberOfProcesses)
         {
-            p[highestPriorityProcess].execution = elapsedTime + 1;
-            p[highestPriorityProcess].wait = p[highestPriorityProcess].execution - p[highestPriorityProcess].arrival - p[highestPriorityProcess].burst;
-            p[highestPriorityProcess].tTime = p[highestPriorityProcess].execution - p[highestPriorityProcess].arrival;
-            remainingProcesses--;
+            p[highestPriorityProcess].remaining -= 1;
+            if(p[highestPriorityProcess].remaining == 0)
+            {
+                p[highestPriorityProcess].execution = elapsedTime + 1;
+                p[highestPriorityProcess].wait = p[highestPriorityProcess].execution - p[highestPriorityProcess].arrival - p[highestPriorityProcess].burst;
+                p[highestPriorityProcess].tTime = p[highestPriorityProcess].execution - p[highestPriorityProcess].arrival;
+                remainingProcesses--;
+            }
         }
     }
     float avgtime=0.0,avgwait=0.0;
