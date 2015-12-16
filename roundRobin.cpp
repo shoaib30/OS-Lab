@@ -20,14 +20,16 @@ int main()  {
         cout<<"\nBurst Time:";
         cin>>p[i].burst;
         p[i].sTime=p[i].burst;
+        p[i].wait = 0;
     }
     cout<<"\n Enter the time quantum : ";
     cin>>timeQ;
     while(true) {
-        for(i = 0 ,counts = 0 ; i <= n; i++)    {
+        for(i = 0 ,counts = 0 ; i < n; i++)    {
             temp = timeQ;
             if( p[i].sTime == 0 )   {
                 counts++;
+                //cout<<"Done "<<i<<"\n";
                 continue;
             }
             if(p[i].sTime >= timeQ) {
@@ -37,6 +39,7 @@ int main()  {
                 temp = p[i].sTime;
                 p[i].sTime = 0;
             }
+            //cout<<"temp: "<<i<<" : "<<temp<<"\n";
             totalServiceTime += temp;
             p[i].turnAroundTime = totalServiceTime;
         }
