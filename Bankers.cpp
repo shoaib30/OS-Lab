@@ -8,7 +8,7 @@ struct process  {
 
 int main()  {
     int n,r,i,j,k,res_count = 0,pros_count = 0;
-    cout<<"Enter the number of processes running (<10): ";
+    cout<<"Enter the number of processes running: ";
     cin>>n;
     cout<<"Enter the number of resources (<5): ";
     cin>>r;
@@ -52,33 +52,30 @@ int main()  {
             cout<<p[i].need[j]<<",";
         cout<<endl;
     }
-    do  {
-        for(k = 0; k < n; k++)  {
-            for(i = 0; i < n; i++) {
-                if(p[i].flag == 0)  {
-                    res_count = 0;
+    for(k = 0; k < n; k++)  {
+        for(i = 0; i < n; i++) {
+            if(p[i].flag == 0)  {
+                res_count = 0;
+                for(j = 0; j < r; j++)  {
+                    if(avail[j] >= p[i].need[j])
+                        res_count++;
+                }
+                if(res_count == r)  {
+                    sequence[pros_count++] = p[i].ID;
+                    p[i].flag = 1;
                     for(j = 0; j < r; j++)  {
-                        if(avail[j] >= p[i].need[j])
-                            res_count++;
+                        avail[j] = avail[j] + p[i].allocation[j];
+                        p[i].available[j] = avail[j];
                     }
-                    if(res_count == r)  {
-                        sequence[pros_count] = p[i].ID;
-                        pros_count++;
-                        p[i].flag = 1;
-                        for(j = 0; j < r; j++)  {
-                            avail[j] = avail[j] + p[i].allocation[j];
-                            p[i].available[j] = avail[j];
-                        }
-                        break;
-                    }
+                    break;
                 }
             }
         }
-        if(pros_count != n) {
-            cout<<"\nUNSAFE STATE!";
-            break;
-        }
-    }while(pros_count != n);
+    }
+    if(pros_count != n) {
+        cout<<"\nUNSAFE STATE!";
+        return 0;
+    }
     if(pros_count == n) {
         cout<<"\nSAFE STATE";
         cout<<"\nSequence: ";
@@ -104,4 +101,5 @@ int main()  {
             cout<<endl;
         }
     }
+    return 0;
 }

@@ -61,7 +61,6 @@ void deallocate()
             break;
         }
     }
-    cout<<"loc:"<<loc<<"  len:"<<len;
     for(int i = loc; i < loc+len; i++)
         bVector[i]=0;
 }

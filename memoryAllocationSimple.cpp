@@ -56,10 +56,7 @@ int main()
         bool flag = false;
         int j,sorted[numberOfBlocks];
         for(i = 0;i < numberOfBlocks; i++)
-        {
-            b[i].blockSize = blocks[i].blockSize;
-            b[i].ID = blocks[i].ID;
-        }
+            b[i]=blocks[i];
         switch(ch)
         {
             case 1:

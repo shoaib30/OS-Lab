@@ -29,7 +29,6 @@ int main()  {
             temp = timeQ;
             if( p[i].sTime == 0 )   {
                 counts++;
-                //cout<<"Done "<<i<<"\n";
                 continue;
             }
             if(p[i].sTime >= timeQ) {
@@ -39,7 +38,6 @@ int main()  {
                 temp = p[i].sTime;
                 p[i].sTime = 0;
             }
-            //cout<<"temp: "<<i<<" : "<<temp<<"\n";
             totalServiceTime += temp;
             p[i].turnAroundTime = totalServiceTime;
         }
