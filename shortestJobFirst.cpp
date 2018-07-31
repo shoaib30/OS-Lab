@@ -10,9 +10,9 @@ struct process
 int main()
 {
     cout<<"Enter Number of processes: ";
-    int numberOfProcesses,i,mini,j,numberArrived = 0, processPointer = 0;
+    int numberOfProcesses,i,mini,j;
     cin>>numberOfProcesses;
-    process p[numberOfProcesses],temp, arrived[numberOfProcesses];
+    process p[numberOfProcesses],temp;
     cout<<"Enter the Burst Time:-\n";
     for(i=0;i<numberOfProcesses;i++)
     {
